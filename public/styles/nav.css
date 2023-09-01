@@ -1,0 +1,28 @@
+
+nav {
+  height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.title{
+  align-self: center;
+  font-family: 'Bungee', cursive;
+ }
+
+ .new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ i {
+  color: red;
+  align-self: center;
+ }
