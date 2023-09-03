@@ -9,6 +9,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  position: fixed;
 }
 
 .title{
