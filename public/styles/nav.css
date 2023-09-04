@@ -17,7 +17,7 @@ nav {
   font-family: 'Bungee', cursive;
  }
 
- .new-tweet {
+ .title-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
