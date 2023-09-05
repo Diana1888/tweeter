@@ -52,6 +52,7 @@ article footer {
 article i{
   color: #4056A1;
   size: 1.5em;
+  margin-left: 5px;
 }
 
 article i:hover {
