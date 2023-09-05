@@ -5,7 +5,7 @@ $(document).ready(function() {
     const $textValue = $tweetText.val();
     let $startCounter = 140;
     
-    $counter = $('div').children('.counter');
+    $counter = $(this).parents().find('.counter');
     const $charCount = `${$startCounter - $textValue.length}`;
     $counter.text(`${$charCount}`);
 
