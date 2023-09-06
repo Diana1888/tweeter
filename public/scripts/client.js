@@ -71,6 +71,19 @@ $(document).ready(function() {
     });
   };
 
+  // const getTweetData = () => {
+
+  //   })
+  // }
+
+  $('.tweet-form').on('submit', (event) => {
+    event.preventDefault();
+
+    const data= $('.tweet-form').serialize();
+    $.post("/tweets", data).then(() => {
+      console.log(data);
+    });
+  });
 
   renderTweets(data);
 });
