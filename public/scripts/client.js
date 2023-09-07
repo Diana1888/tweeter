@@ -71,6 +71,18 @@ $(document).ready(function() {
   $('.tweet-form').on('submit', (event) => {
     event.preventDefault();
 
+    const textInput = $('#tweet-text').val();
+    if (textInput === '') {
+      alert("Please write your tweet!");
+      return;
+    }
+    if (textInput.length > 140) {
+      alert("Your tweet is too long. Please make it shorter");
+      return;
+
+    }
+
+
     const data = $('.tweet-form').serialize();
     $.post("/tweets", data).then(() => {
       console.log(data);
