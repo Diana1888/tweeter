@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 // Fake data taken from initial-tweets.json
 // const data = [
 //   {
@@ -35,6 +34,11 @@
 
 $(document).ready(function() {
 
+  // const timeAgo = () => {
+  //   format(date[locale = 'en_US', opts]);
+  //   return format(Date.now() - 11 * 1000 * 60 * 60);
+  // }
+
   //Create the tweet element
   const createTweetElement = function(tweet) {
     let $tweet = $(`<article class="tweet">
@@ -50,7 +54,7 @@ $(document).ready(function() {
 <p class="content">${tweet.content.text}</p>
 <hr>
 <footer>
-<span class="date">${tweet.created_at}</span>
+<span class="date">${timeago.format(tweet.created_at)}</span>
 <span class="icons">
   <i class="fa-solid fa-flag"></i>
   <i class="fa-solid fa-retweet"></i>
@@ -78,7 +82,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     tweets.forEach((tweet) => {
       const tweetElement = createTweetElement(tweet);
-      $('#tweets-container').append(tweetElement);
+      $('#tweets-container').prepend(tweetElement);
     });
   };
 
