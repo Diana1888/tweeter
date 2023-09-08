@@ -33,11 +33,14 @@
 
 
 $(document).ready(function() {
+  //Preventing XSS with Escaping
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-  // const timeAgo = () => {
-  //   format(date[locale = 'en_US', opts]);
-  //   return format(Date.now() - 11 * 1000 * 60 * 60);
-  // }
+
 
   //Create the tweet element
   const createTweetElement = function(tweet) {
@@ -51,7 +54,7 @@ $(document).ready(function() {
 <span class="username">${tweet.user.handle}</span>
 </div>
 </header>
-<p class="content">${tweet.content.text}</p>
+<p class="content">${escape(tweet.content.text)}</p>
 <hr>
 <footer>
 <span class="date">${timeago.format(tweet.created_at)}</span>
