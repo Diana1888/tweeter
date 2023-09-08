@@ -84,13 +84,14 @@ $(document).ready(function() {
 
     const data = $('.tweet-form').serialize();
     $.post("/tweets", data).then(() => {
-      loadTweets(data);
+        loadTweets(data);
     });
   });
 
 
   //Loop trought all tweets and append each tweet to the tweets container
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     tweets.forEach((tweet) => {
       const tweetElement = createTweetElement(tweet);
       $('#tweets-container').prepend(tweetElement);
