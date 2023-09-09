@@ -74,14 +74,24 @@ $(document).ready(function() {
   $('.tweet-form').on('submit', (event) => {
     event.preventDefault();
 
+    const $errorMessageLong = $('#error-message-long');
+    const $errorMessageEmpty = $('#error-message-empty');
+
     const allowedChar = 140;
     //check if there is no input or too long tweet
     const textInput = $('#tweet-text').val();
     if (textInput === '') {
-      return alert("Please write your tweet!");
+      $errorMessageEmpty.slideDown('slow');
+      return;
+    } else {
+      $errorMessageEmpty.hide();
     }
+
     if (textInput.length > allowedChar) {
-      return alert("Your tweet is too long. Please make it shorter");
+       $errorMessageLong.slideDown('slow');
+       return;
+    } else {
+       $errorMessageLong.hide();
     }
 
 
