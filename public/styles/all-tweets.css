@@ -58,3 +58,10 @@ article i{
 article i:hover {
   color: #de9f00;
 }
+
+#error-message-long, #error-message-empty {
+  border: red solid 3px;
+  color: red;
+  padding: 10px;
+  display: none;
+}
