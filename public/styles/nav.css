@@ -28,3 +28,11 @@ nav {
   color: red;
   align-self: center;
  }
+
+ #toggle-btn {
+  padding: 10px;
+ }
+
+ #toggle-btn:hover {
+  cursor: pointer;
+ }
