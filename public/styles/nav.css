@@ -22,11 +22,14 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
+  /* position: absolute;
+  right: 90%; */
+  position: relative;
  }
 
  nav i {
   color: red;
-  align-self: center;
  }
 
  #toggle-btn {
@@ -36,3 +39,23 @@ nav {
  #toggle-btn:hover {
   cursor: pointer;
  }
+
+ #angle-move {
+  align-self: center;
+  position: absolute;
+  top: 70px;
+  animation: jumpInfinite 2s infinite;
+ }
+ 
+
+ @keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 10px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
