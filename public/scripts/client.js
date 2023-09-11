@@ -52,26 +52,21 @@ $(document).ready(function() {
   $('.tweet-form').on('submit', (event) => {
     event.preventDefault();
 
-    const $errorMessageLong = $('#error-message-long');
-    const $errorMessageEmpty = $('#error-message-empty');
+    const $errorMessageLong = $('#error-message-long').hide();
+    const $errorMessageEmpty = $('#error-message-empty').hide();
 
     const allowedChar = 140;
     //check if there is no input or too long tweet
     const textInput = $('#tweet-text').val();
+
     if (textInput === '') {
       $errorMessageEmpty.slideDown('slow');
       return;
-    } else {
-      $errorMessageEmpty.hide();
-    }
-
+    } 
     if (textInput.length > allowedChar) {
        $errorMessageLong.slideDown('slow');
        return;
-    } else {
-       $errorMessageLong.hide();
     }
-
 
     const data = $('.tweet-form').serialize();
     $.post("/tweets", data).then(() => {
