@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Disable viewport zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -34,9 +37,8 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-
       <div class="title-tweet">
-        <div><button id="toggle-btn"><strong>Write</strong> a new tweet</button></div>
+        <button id="toggle-btn"><strong>Write</strong> a new tweet</button>
         
         <i id="angle-move" class="fa-solid fa-angles-down"></i>
       </div>
@@ -44,7 +46,7 @@
 
     <header class="profile">
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img class="profile-img" src="/images/profile-hex.png"> 
       </div>
       <br>
       <div class="profile-name">
