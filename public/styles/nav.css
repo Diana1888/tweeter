@@ -1,11 +1,9 @@
-
 nav {
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
   color: #FFFFFF;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding: 1.5em;
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -23,9 +21,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-  /* position: absolute;
-  right: 90%; */
-  position: relative;
  }
 
  nav i {
@@ -44,7 +39,7 @@ nav {
   align-self: center;
   position: absolute;
   top: 70px;
-  animation: jumpInfinite 2s infinite;
+  animation: jumpInfinite 1.5s infinite;
  }
  
 
@@ -58,4 +53,12 @@ nav {
   100% {
     margin-top: 0;
   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav, #toggle-btn {
+    background-color: #de9f00;
+    background-image: url(http://www.transparenttextures.com/patterns/arches.png);
+  }
+
 }
