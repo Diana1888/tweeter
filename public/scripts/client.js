@@ -77,7 +77,7 @@ $(document).ready(function() {
 
       //empty textarea after tweet was sunmitted
       $('#tweet-text').val('');
-      //update counter with 
+      //update counter with
       $('.counter').val(allowedChar);
     });
 
