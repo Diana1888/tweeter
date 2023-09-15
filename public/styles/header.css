@@ -10,9 +10,14 @@
 }
 
 .profile h2{
+  text-align: center;
   color: white;
   font-weight: 300;
   margin: 0;
+}
+
+br{
+  display: none;
 }
 
 .first-name {
