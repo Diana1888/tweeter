@@ -41,6 +41,14 @@ nav {
   top: 70px;
   animation: jumpInfinite 1.5s infinite;
  }
+
+ .hide-nav{
+  background: transparent;
+ }
+
+ .hide-tweet-title {
+  display: none;
+ }
  
 
  @keyframes jumpInfinite {
@@ -54,8 +62,9 @@ nav {
     margin-top: 0;
   }
 }
-
-@media only screen and (max-width: 1024px) {
+/* Media Queries */
+/* Tablet size */
+@media only screen and (max-width: 1023px) {
   nav {
     background-color: #de9f00;
     background-image: url(http://www.transparenttextures.com/patterns/arches.png);
