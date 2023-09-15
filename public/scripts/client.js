@@ -6,49 +6,52 @@
 
 $(document).ready(function() {
   //Preventing XSS with Escaping
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-
   //Create the tweet element
   const createTweetElement = function(tweet) {
-    let $tweet = $(`<article class="tweet">
+    let $tweet = $(`
+    <article class="tweet">
     <header class="tweet">
-<div class="image-profile">
-<span><img class="user-image" src="${tweet.user.avatars}"></span>
-<span class="name">${tweet.user.name}</span>
-</div>
-<div>
-<span class="username">${tweet.user.handle}</span>
-</div>
-</header>
-<p class="content">${escape(tweet.content.text)}</p>
-<hr>
-<footer>
-<span class="date">${timeago.format(tweet.created_at)}</span>
-<span class="icons">
-  <i class="fa-solid fa-flag"></i>
-  <i class="fa-solid fa-retweet"></i>
-  <i class="fa-solid fa-heart"></i>
-</span>
-</footer>
-</article>
-`);
+      <div class="image-profile">
+        <span><img class="user-image" src="${tweet.user.avatars}"></span>
+        <span class="name">${tweet.user.name}</span>
+      </div>
+      <div>
+        <span class="username">${tweet.user.handle}</span>
+      </div>
+    </header>
+
+    <p class="content">${escape(tweet.content.text)}</p>
+    <hr>
+    <footer>
+      <span class="date">${timeago.format(tweet.created_at)}</span>
+      <span class="icons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </span>
+    </footer>
+    </article>
+    `);
 
     return $tweet;
   };
 
+  //new-tweet section up or down when the button is clicked and tweet area enabled
   $('#toggle-btn').on('click', (event) => {
     event.preventDefault();
     $('.new-tweet').toggle(function() {
       $('#tweet-text').trigger('focus');
     });
-  })
+  });
 
 
+  //ajax post requests on submit button and form validation
   $('.tweet-form').on('submit', (event) => {
     event.preventDefault();
 
@@ -62,20 +65,26 @@ $(document).ready(function() {
     if (textInput === '') {
       $errorMessageEmpty.slideDown('slow');
       return;
-    } 
+    }
     if (textInput.length > allowedChar) {
-       $errorMessageLong.slideDown('slow');
-       return;
+      $errorMessageLong.slideDown('slow');
+      return;
     }
 
     const data = $('.tweet-form').serialize();
     $.post("/tweets", data).then(() => {
-        loadTweets(data);
+      loadTweets(data);
+
+      //empty textarea after tweet was sunmitted
+      $('#tweet-text').val('');
+      //update counter with 
+      $('.counter').val(allowedChar);
     });
+
   });
 
 
-  //Loop trought all tweets and append each tweet to the tweets container
+  //loop trought all tweets and append each tweet to the tweets container
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     tweets.forEach((tweet) => {
@@ -84,7 +93,7 @@ $(document).ready(function() {
     });
   };
 
-
+  //fetch data from the server using AJAX get method
   const loadTweets = () => {
     $.ajax({
       url: "/tweets",
@@ -100,6 +109,7 @@ $(document).ready(function() {
     });
   };
 
+  //load tweets on page
   loadTweets();
 });
 
