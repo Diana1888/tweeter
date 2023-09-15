@@ -65,6 +65,7 @@ article i:hover {
   color: red;
   padding: 10px;
   display: none;
+  text-align: center;
 }
 
 #scroll-btn{
