@@ -33,6 +33,7 @@ main {
 
 /* Media Queries */
 
+/* Screen size */
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
@@ -40,13 +41,11 @@ main {
     justify-content: space-between;
     gap: 150px;
   }
- 
 
   main {
     width: 55%;
     margin-right: 2em;
     margin-top: 200px;
-
   }
 }
 

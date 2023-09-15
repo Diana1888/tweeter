@@ -9,11 +9,7 @@
   background-image: url(http://www.transparenttextures.com/patterns/arches.png);
 }
 
-
-
 .profile h2{
-  position: relative;
-  bottom: 30px;
   color: white;
   font-weight: 300;
   margin: 0;
@@ -23,13 +19,26 @@
   font-weight: 600;
 }
 
+
+/* Media Queries */
+
+/* Tablet size */
 @media only screen and (max-width: 1023px) {
   .profile-img {
     max-width: 200px;
     max-height: 200px;
   }
+
+  br {
+    display: none;
+  }
+
+  .profile {
+    padding-bottom: 20px;
+  }
 }
 
+/* Screen size */
 @media only screen and (min-width: 1024px) {
   .profile {
     width: 33%;

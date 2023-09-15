@@ -12,11 +12,11 @@ $(document).ready(function() {
 
     //counter turns red if exceed allowed characters
     if ($charCount < 0) {
-      $counter.addClass('negative')
+      $counter.addClass('negative');
     } else {
-      $counter.removeClass('negative')
+      $counter.removeClass('negative');
     }
-  })
+  });
   
 });
 
