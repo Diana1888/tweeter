@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(function() {
   //Preventing XSS with Escaping
   const escape = function(str) {
@@ -109,7 +110,7 @@ $(document).ready(function() {
     });
   };
 
-  //load tweets on page
+  //first function which is called when document is loaded
   loadTweets();
 });
 
