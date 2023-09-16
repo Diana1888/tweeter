@@ -21,7 +21,8 @@ in this project users can create short posts of up to 140 characters and have th
 *Error message when tweet content is too long*
 !["Error message"](https://github.com/Diana1888/tweeter/blob/master/docs/error.png?raw=true)
 
-*Tablets view*
+*Tablets view of Tweeter*
+
 !["Tablets view"](https://github.com/Diana1888/tweeter/blob/master/docs/tablet.png?raw=true)
 
 *Button which allows user to jump back to the top of the page*
