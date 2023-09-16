@@ -101,7 +101,6 @@ $(document).ready(function() {
       method: "GET",
       dataType: "json",
       success: (result) => {
-        console.log(result);
         renderTweets(result);
       },
       error: (error) => {
